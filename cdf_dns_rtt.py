@@ -12,7 +12,7 @@ ttl_values = df['RTT'].dropna().values
 
 
 # Sort the values
-rtt_sorted = np.sort(ttl_values)
+rtt_sorted = np.sort(ttl_values) *1000
 
 # Compute CDF
 cdf = np.arange(1, len(rtt_sorted) + 1) / len(rtt_sorted)
@@ -25,12 +25,12 @@ plt.plot(rtt_sorted, cdf, linewidth=1)   # <-- reduce linewidth to make the line
 
 # X-axis in log scale with custom ticks
 plt.xscale("log")
-plt.xticks([1,3, 6, 12, 24], ["1","3", "6", "12", "24"])
+plt.xticks([1,10, 100, 1000, 10000], ["1","10", "100", "1000", "10000"])
 
 # Y-axis ticks
 plt.yticks(np.arange(0.1, 1.1, 0.1))
 
-plt.xlabel("Recursive lookup RTT (Seconds)")
+plt.xlabel("Recursive lookup RTT (milliseconds)")
 plt.ylabel("CDF")
 plt.title("Recursive RTT  ")
 
