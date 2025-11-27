@@ -9,7 +9,7 @@ category_counts = df['Category'].value_counts(normalize=True)  # normalize=True 
 
 # Plot bar chart
 plt.figure(figsize=(6,4))
-category_counts.plot(kind='bar', color=['#1f77b4','#ff7f0e','#2ca02c'])
+category_counts.plot(kind='bar', color=['#1f77b4',"#0b4658","#11121D"])
 plt.title("Proportion of DNS Servers by Category")
 plt.ylabel("Proportion")
 plt.xlabel("Category")
